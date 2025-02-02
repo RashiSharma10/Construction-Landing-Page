@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Home</title>
+    <style>
+      * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* GLOBAL STYLES */
+  :root {
+    --primary-color: #87bc29;
+    --primary-font: Algerian;
+    --bg-image-center: no-repeat center/cover;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  /* ***** NAVIGATION  ***** */
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    z-index: 999;
+  }
+  
+  .list-items {
+    display: inline;
+  }
+  
+  .list-items a {
+    padding: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #fff;
+  }
+  
+  .list-items a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .nav__logo h1 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  span {
+    color: var(--primary-color);
+  }
+  
+  /* ***** HEADER  ***** */
+  .hero {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.616)),
+      url("scott-blake-x-ghf9LjrVg-unsplash.jpg") var(--bg-image-center)
+        fixed;
+  }
+  
+  .hero__headings-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: sans-serif;
+    margin-left: 10rem;
+    color: #fff;
+  }
+  
+  .hero__main-headings {
+    font-size: 5rem;
+    color: white;
+  }
+  
+  .main-span {
+    font-family: var(--primary-font);
+  }
+  
+  .hero__headings-container p {
+    font-weight: bold;
+  }
+  
+  .main-btn {
+    text-decoration: none;
+    margin-top: 20px;
+    color: #fff;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* ****** SERVICES *******/
+  .main-headings {
+    font-family: sans-serif;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 50px;
+    transition-property: all;
+    transition-duration: 0.5s;
+  }
+  
+  .main-headings:hover {
+    transform: skew(30deg);
+  }
+  
+  /* CARDS */
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    padding: 20px;
+    margin: 20px;
+    transition-property: all;
+    transition-duration: 1s;
+    border: 1px solid #ccc;
+  }
+  
+  .card:hover {
+    box-shadow: 2px 2px 2px 2px #ccc;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  .card-image {
+    width: 300px;
+    height: 250px;
+  }
+  
+  .card p {
+    color: rgb(39, 39, 39);
+    font-family: sans-serif;
+    padding: 10px;
+  }
+  
+  .img-one {
+    background: url("one.jpg") var(--bg-image-center);
+  }
+  .img-two {
+    background: url("two.jpg") var(--bg-image-center);
+  }
+  .img-three {
+    background: url("three.jpg") var(--bg-image-center);
+  }
+  
+  /* ******* WHY US ******* */
+  .why-us {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .lists-container {
+    margin-left: 30px;
+    font-family: sans-serif;
+  }
+  
+  .list {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .list-number {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px;
+  }
+  
+  .list-number p { 
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  .list-info {
+    color: rgb(122, 122, 122);
+    transition-property: all;
+    transition-duration: 0.7s;
+  }
+  
+  .list-info:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+  }
+  
+  .owner-image {
+    background: url("one.jpg") no-repeat top/cover;
+    width: 300px;
+    height: 300px;
+    margin-right: 10rem;
+    border-radius: 50%;
+    border: 10px solid var(--primary-color);
+    transition-property: all;
+    transition-duration: 1s;
+  }
+  
+  .owner-image:hover {
+    transform: scale(1.2);
+  }
+  
+  /* ******* PROJECT DETAILS ******* */
+  .project-details__container-left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    font-family: sans-serif;
+  }
+  
+  .project-details__container-right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+    font-family: sans-serif;
+  }
+  
+  .project-details-img {
+    box-shadow: 10px 10px 5px var(--primary-color);
+    transition-property: all;
+    transition-duration: 1s;
+  }
+  
+  .project-details-img:hover {
+    transform: scale(1.1);
+    box-shadow: 20px 20px 10px var(--primary-color);
+    transform: skew(10deg);
+  }
+  
+  .title {
+    margin-left: 40px;
+  }
+  
+  /* ********* FORM ********* */
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10rem 10rem;
+  }
+  
+  input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    outline: none;
+    width: 50%;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  .form-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+  }
+  
+  /* ********* FOOTER ********* */
+  footer {
+    height: 30vh;
+    background-color: #000000be;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer > a {
+    color: #fff;
+    text-decoration: none;
+    margin: 20px;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+  }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="nav__logo">
+        <h1>D<span>H</span></h1>
+      </div>
+      <ul>
+        <li class="list-items"><a href="#">Home</a></li>
+        <li class="list-items"><a href="#services">Services</a></li>
+        <li class="list-items"><a href="#why-us">Why Us?</a></li>
+        <li class="list-items"><a href="#project-details">Project Details</a></li>
+      </ul>
+    </nav>
+    <header class="hero">
+      <section class="hero__headings-container">
+        <h3>Build <span>Your</span></h3>
+        <h1 class="hero__main-headings">
+          DREAM <span class="main-span">HOME</span>
+        </h1>
+        <p>WE CONSTRUCT YOUR FUTURE</p>
+        <a href="#" class="main-btn">Learn More</a>
+      </section>
+    </header>
+
+    <h1 class="main-headings center">
+      OUR <span class="main-span">SERVICES</span>
+    </h1>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+      <!-- CARDS -->
+      <section class="cards">
+        <div class="card">
+          <div class="card-image img-one"></div>
+          <p>Construction</p>
+        </div>
+        <div class="card">
+          <div class="card-image img-two"></div>
+          <p>ARCHITECTURE PLANING</p>
+        </div>
+        <div class="card">
+          <div class="card-image img-three"></div>
+          <p>CONSULTANCY</p>
+        </div>
+      </section>
+    </section>
+
+    <h1 class="main-headings">WHY CHOOSE<span class="main-span"> US?</span></h1>
+
+    <!-- WHY US -->
+    <section class="why-us" id="why-us">
+      <div class="lists-container">
+        <div class="list">
+          <div class="list-number">
+            <p>1</p>
+          </div>
+          <p class="list-info">HIGH QUALIFIED & TECHNICAL PROFESSIONALS</p>
+        </div>
+        <div class="list">
+          <div class="list-number">
+            <p>2</p>
+          </div>
+          <p class="list-info">ADVANCE PLANING</p>
+        </div>
+        <div class="list">
+          <div class="list-number">
+            <p>3</p>
+          </div>
+          <p class="list-info">STABILITY RESOURCES & EXPERTIES</p>
+        </div>
+        <div class="list">
+          <div class="list-number">
+            <p>4</p>
+          </div>
+          <p class="list-info">PASSION, INTEGRITY, & PUNCTUALITY</p>
+        </div>
+        <div class="list">
+          <div class="list-number">
+            <p>5</p>
+          </div>
+          <p class="list-info">BREADTH OF SERVICES</p>
+        </div>
+      </div>
+      <div class="owner-image-container">
+        <div class="owner-image"></div>
+      </div>
+    </section>
+
+    <h1 class="main-headings center">
+      PROJECT <span class="main-span">#DETAILS</span>
+    </h1>
+
+    <!-- PROJECT DETAILS -->
+    <section class="project-details" id="project-details">
+      <section class="project-details__container-left">
+        <div class="img-container">
+          <div class="card-image project-details-img img-one"></div>
+        </div>
+        <section class="details">
+          <p class="title">ARCHITECTURE DESIGN</p>
+          <div class="list">
+            <div class="list-number">
+              <p>1</p>
+            </div>
+            <p class="list-info">2D & 3D MODELING</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>2</p>
+            </div>
+            <p class="list-info">INTERIAL & EXTERIOR DESIGN</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>3</p>
+            </div>
+            <p class="list-info">LANDSCAPING & OUTDOOR GARDENING</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>4</p>
+            </div>
+            <p class="list-info">
+              ELECTRICAL, PLUMBING & SEWERAGE DRAWING PLANE.
+            </p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>5</p>
+            </div>
+            <p class="list-info">SOIL INVESTIGATION</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="project-details__container-right">
+        <section class="details">
+          <p class="title">CONSTRUCTION</p>
+
+          <div class="list">
+            <div class="list-number">
+              <p>1</p>
+            </div>
+            <p class="list-info">RESIDENTIAL & COMMERCIAL PROJECTS</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>2</p>
+            </div>
+            <p class="list-info">TURNKEY PROJECT (WITH MATERIAL)</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>3</p>
+            </div>
+            <p class="list-info">LANDSCAPING & OUTDOOR GARDENING</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>4</p>
+            </div>
+            <p class="list-info">DEMOLATION</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>5</p>
+            </div>
+            <p class="list-info">RENOVATION & RE-CONSTRUCTION</p>
+          </div>
+        </section>
+        <div class="img-container">
+          <div class="card-image project-details-img img-two"></div>
+        </div>
+      </section>
+
+
+      <section class="project-details__container-left">
+        <div class="img-container">
+          <div class="card-image project-details-img img-three"></div>
+        </div>
+        <section class="details">
+          <p class="title">REAL ESTATE</p>
+          <div class="list">
+            <div class="list-number">
+              <p>1</p>
+            </div>
+            <p class="list-info">
+              B - 17 MULTI GARDEN</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>2</p>
+            </div>
+            <p class="list-info">PARK VIEW CITY</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>3</p>
+            </div>
+            <p class="list-info">BEAUTY OF HILLS</p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>4</p>
+            </div>
+            <p class="list-info">
+              FAISAL MARGALLAH CITY.
+            </p>
+          </div>
+          <div class="list">
+            <div class="list-number">
+              <p>5</p>
+            </div>
+            <p class="list-info">BLUE WORLD CITY</p>
+          </div>
+        </section>
+    </section>
+
+    <form>
+      <input type="text" placeholder="John Doe">
+      <input type="email" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <a href="#" class="form-btn">Submit</a>
+    </form>
+
+    <footer>
+      <a href="#">About</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact Us</a>
+    </footer>
+  </body>
+</html>
